@@ -37,59 +37,78 @@ git clone https://github.com/tu_usuario/tu_repositorio.git
 cd tu_repositorio
 
 ### 2. Instalar dependencias
-
 ```bash
-
+cd gestion-veterinaria
 npm install
+```
+Instala las dependencias necesarias:
+```bash
+npm install
+```
 
-### 3. Configurar variables de entorno
-
-
-Crea un archivo .env en la raíz con el siguiente contenido:
-
-
+### 3. Configurar la base de datos
+```bash
 MONGO_URI=tu_cadena_de_conexion_mongodb_atlas
 PORT=3000
-Cambia tu_cadena_de_conexion_mongodb_atlas por la URI real que obtuviste en MongoDB Atlas.
+```
 
 ### 4. Ejecutar el servidor
 ```bash
-
 npm run dev
-El servidor arrancará en el puerto definido (por defecto 3000).
+```
+El servidor estará disponible en `http://localhost:3000`.
 
-Estructura del proyecto
-```bash
+---
 
-/mi-veterinaria
-├── app.js
-├── /models
-│   ├── Cliente.js
-│   └── Mascota.js
-├── /routes
-│   ├── clientes.js
-│   └── mascotas.js
-├── /config
-│   └── db.js
-├── .env
-├── package.json
-└── README.md
-API Endpoints
-Método	Ruta	Descripción
-GET	/api/clientes	Listar todos los clientes
-GET	/api/clientes/:id	Obtener un cliente por ID
-POST	/api/clientes	Crear un nuevo cliente
-PUT	/api/clientes/:id	Actualizar un cliente
-DELETE	/api/clientes/:id	Eliminar un cliente
-GET	/api/mascotas	Listar todas las mascotas o filtrar por cliente (?cliente_id=ID)
-POST	/api/mascotas	Crear una mascota vinculada a un cliente
+## **Estructura del Proyecto**
+```plaintext
+gestion-veterinaria/
+├── config/         # Configuración de la base de datos
+│   ├── db.js
+├── models/         # Modelos de MongoDB
+│   ├── mascotaModel.js
+├── routes/         # Rutas de la API
+│   ├── mascotas.js
+├── app.js        # Punto de entrada de la aplicación
+├── package.json    # Dependencias y scripts
+```
 
-Próximos pasos (ideas de mejora)
-Agregar autenticación y autorización.
+---
 
-Implementar paginación en los endpoints de listado.
+## **Endpoints Principales**
 
-Añadir validaciones más robustas (por ejemplo, formato de email y teléfono).
+| Método | Endpoint                       | Descripción                            |
+|--------|--------------------------------|----------------------------------------|
+| GET    | `/api/clientes`                | lista de todos los clientes            |
+| GET    | `/api/clientes/:id`            | Obtiene un cliente por ID              |
+| POST   | `/api/clientes`                | Crea un nuevo cliente                  |
+| PUT    | `/api/clientes/:id`            | Actualiza un cliente por ID            |
+| DELETE | `/api/cliente/:id`             | Elimina un cliente por ID              |
+| GET    | `/api/mascotas/`               | lista de las mascotas                  |
+| POST   | `/api/mascotas`                | Crea una nueva mascota                 |
 
-Crear documentación con Swagger o Postman.
+---
+
+## **Ejemplo**
+
+### Crear una mascota 
+**Petición:** POST `/mascota`
+```json
+{
+  "nombre": "Firulais",
+  "especie": "Perro",
+  "raza": "Labrador",
+  "edad": 5,
+  "cliente_id": "64e8fbd27e6e91c4a93b52a1"
+}
+```
+
+
+---
+
+## **Próximos Pasos**
+- Integrar autenticación de usuarios para gestionar permisos.
+- disponible en VERCEL gestion-veterinaria-lakgmaiiw-valentinas-projects-4308053b.vercel.app
+
+---
 
