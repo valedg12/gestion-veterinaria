@@ -35,11 +35,11 @@ Esta es una API REST para gestionar clientes y sus mascotas en una clínica vete
 ```bash
 git clone https://github.com/tu_usuario/tu_repositorio.git
 cd tu_repositorio
+
 ### 2. Instalar dependencias
 
-bash
-Copiar
-Editar
+```bash
+
 npm install
 
 ### 3. Configurar variables de entorno
@@ -47,24 +47,20 @@ npm install
 
 Crea un archivo .env en la raíz con el siguiente contenido:
 
-env
-Copiar
-Editar
+
 MONGO_URI=tu_cadena_de_conexion_mongodb_atlas
 PORT=3000
 Cambia tu_cadena_de_conexion_mongodb_atlas por la URI real que obtuviste en MongoDB Atlas.
 
 ### 4. Ejecutar el servidor
-bash
-Copiar
-Editar
+```bash
+
 npm run dev
 El servidor arrancará en el puerto definido (por defecto 3000).
 
 Estructura del proyecto
-bash
-Copiar
-Editar
+```bash
+
 /mi-veterinaria
 ├── app.js
 ├── /models
