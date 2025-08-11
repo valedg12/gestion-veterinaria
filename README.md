@@ -36,11 +36,15 @@ Esta es una API REST para gestionar clientes y sus mascotas en una clínica vete
 git clone https://github.com/tu_usuario/tu_repositorio.git
 cd tu_repositorio
 ### 2. Instalar dependencias
+
 bash
 Copiar
 Editar
 npm install
+
 ### 3. Configurar variables de entorno
+
+
 Crea un archivo .env en la raíz con el siguiente contenido:
 
 env
